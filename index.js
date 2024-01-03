@@ -80,7 +80,7 @@ app.post('/generate-embeddings', async (req, res) => {
         const text = req.body.text;
 
         // Flask 서버로 임베딩 생성 요청
-        const flaskResponse = await axios.post('http://192.168.0.13:5000/embeddings', { "text" : text });
+        const flaskResponse = await axios.post('http://IP주소:5000/embeddings', { "text" : text });
         const embedding = flaskResponse.data.embedding;
 
         res.json(embedding);
